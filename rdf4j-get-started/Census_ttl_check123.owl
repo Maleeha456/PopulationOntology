@@ -1,0 +1,991 @@
+@prefix : <http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha> .
+
+<http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#forOccupationIs
+:forOccupationIs rdf:type owl:ObjectProperty ;
+                 rdfs:domain [ rdf:type owl:Restriction ;
+                               owl:onProperty owl:topObjectProperty ;
+                               owl:someValuesFrom :CapitalGain
+                             ] ;
+                 rdfs:range [ rdf:type owl:Restriction ;
+                              owl:onProperty owl:topObjectProperty ;
+                              owl:someValuesFrom :AgentRoleOccupation
+                            ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasAge
+:hasAge rdf:type owl:ObjectProperty ;
+        rdfs:domain [ rdf:type owl:Restriction ;
+                      owl:onProperty :hasAge ;
+                      owl:someValuesFrom :Agent-Individual
+                    ] ;
+        rdfs:range [ rdf:type owl:Restriction ;
+                     owl:onProperty :hasAge ;
+                     owl:someValuesFrom :Age
+                   ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasCapital
+:hasCapital rdf:type owl:ObjectProperty ;
+            rdfs:domain [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasCapital ;
+                          owl:someValuesFrom :Agent-Individual
+                        ] ;
+            rdfs:range [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasCapital ;
+                         owl:someValuesFrom :Capital
+                       ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasCapitalGain
+:hasCapitalGain rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasCapital ;
+                rdfs:domain [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasCapitalGain ;
+                              owl:someValuesFrom :Agent-Individual
+                            ] ;
+                rdfs:range [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasCapitalGain ;
+                             owl:someValuesFrom :CapitalGain
+                           ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasCapitalLoss
+:hasCapitalLoss rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasCapital ;
+                rdfs:domain [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasCapitalLoss ;
+                              owl:someValuesFrom :Agent-Individual
+                            ] ;
+                rdfs:range [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasCapitalLoss ;
+                             owl:someValuesFrom :CapitalLoss
+                           ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasEduNumber
+:hasEduNumber rdf:type owl:ObjectProperty ;
+              rdfs:domain [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEduNumber ;
+                            owl:someValuesFrom :Education
+                          ] ;
+              rdfs:range [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasEduNumber ;
+                           owl:someValuesFrom :EducationNumber
+                         ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasEducationTill
+:hasEducationTill rdf:type owl:ObjectProperty ;
+                  rdfs:domain [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasEducationTill ;
+                                owl:someValuesFrom :Agent-Individual
+                              ] ;
+                  rdfs:range [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasEducationTill ;
+                               owl:someValuesFrom :Education
+                             ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasFamilyRelationStatusAs
+:hasFamilyRelationStatusAs rdf:type owl:ObjectProperty ;
+                           rdfs:domain [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasFamilyRelationStatusAs ;
+                                         owl:someValuesFrom :Agent-Individual
+                                       ] ;
+                           rdfs:range [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasFamilyRelationStatusAs ;
+                                        owl:someValuesFrom :Relationship
+                                      ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasFemaleGender
+:hasFemaleGender rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :hasGender ;
+                 rdfs:domain [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasFemaleGender ;
+                               owl:someValuesFrom :Agent-Individual
+                             ] ;
+                 rdfs:range [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasFemaleGender ;
+                              owl:someValuesFrom :Female
+                            ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasFinalWt
+:hasFinalWt rdf:type owl:ObjectProperty ;
+            rdfs:domain [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasFinalWt ;
+                          owl:someValuesFrom :AgentRoleOccupation
+                        ] ;
+            rdfs:range [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasFinalWt ;
+                         owl:someValuesFrom :FinalWeight
+                       ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasGender
+:hasGender rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasGender ;
+                         owl:someValuesFrom :Agent-Individual
+                       ] ;
+           rdfs:range [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGender ;
+                        owl:someValuesFrom :Sex
+                      ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasMaleGender
+:hasMaleGender rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasGender ;
+               rdfs:domain [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasMaleGender ;
+                             owl:someValuesFrom :Agent-Individual
+                           ] ;
+               rdfs:range [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasMaleGender ;
+                            owl:someValuesFrom :Male
+                          ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasMaritialStatus
+:hasMaritialStatus rdf:type owl:ObjectProperty ;
+                   rdfs:domain [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMaritialStatus ;
+                                 owl:someValuesFrom :Agent-Individual
+                               ] ;
+                   rdfs:range [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasMaritialStatus ;
+                                owl:someValuesFrom :MaritalStatus
+                              ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasOccupation
+:hasOccupation rdf:type owl:ObjectProperty ;
+               rdfs:domain [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasOccupation ;
+                             owl:someValuesFrom :Agent-Individual
+                           ] ;
+               rdfs:range [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasOccupation ;
+                            owl:someValuesFrom :AgentRoleOccupation
+                          ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasRace
+:hasRace rdf:type owl:ObjectProperty ;
+         rdfs:domain [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasRace ;
+                       owl:someValuesFrom :Agent-Individual
+                     ] ;
+         rdfs:range [ rdf:type owl:Restriction ;
+                      owl:onProperty :hasRace ;
+                      owl:someValuesFrom :Race
+                    ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasSalary
+:hasSalary rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasSalary ;
+                         owl:someValuesFrom :Agent-Individual
+                       ] ;
+           rdfs:range [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasSalary ;
+                        owl:someValuesFrom :Salary
+                      ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasSpouse
+:hasSpouse rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasSpouse ;
+                         owl:someValuesFrom :Agent-Individual
+                       ] ;
+           rdfs:range [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasSpouse ;
+                        owl:someValuesFrom :Couple
+                      ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasWorkClass
+:hasWorkClass rdf:type owl:ObjectProperty ;
+              rdfs:domain [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasWorkClass ;
+                            owl:someValuesFrom :Agent-Individual
+                          ] ;
+              rdfs:range [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasWorkClass ;
+                           owl:someValuesFrom :WorkClass
+                         ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasWorkingHours
+:hasWorkingHours rdf:type owl:ObjectProperty ;
+                 rdfs:domain [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasWorkingHours ;
+                               owl:someValuesFrom :Agent-Individual
+                             ] ;
+                 rdfs:range [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasWorkingHours ;
+                              owl:someValuesFrom :HoursPerWeek
+                            ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#isFrom
+:isFrom rdf:type owl:ObjectProperty ;
+        rdfs:domain [ rdf:type owl:Restriction ;
+                      owl:onProperty owl:topObjectProperty ;
+                      owl:someValuesFrom :Agent-Individual
+                    ] ;
+        rdfs:range [ rdf:type owl:Restriction ;
+                     owl:onProperty owl:topObjectProperty ;
+                     owl:someValuesFrom :Country
+                   ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#isHusband
+:isHusband rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasSpouse ;
+           rdfs:domain [ rdf:type owl:Restriction ;
+                         owl:onProperty :isHusband ;
+                         owl:someValuesFrom :Agent-Individual
+                       ] ;
+           rdfs:range [ rdf:type owl:Restriction ;
+                        owl:onProperty :isHusband ;
+                        owl:someValuesFrom :Agent-Individual
+                      ] ;
+           owl:propertyChainAxiom ( :hasMaleGender
+                                    :isMarried
+                                  ) .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#isMarried
+:isMarried rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasMaritialStatus ;
+           rdfs:domain [ rdf:type owl:Restriction ;
+                         owl:onProperty :isMarried ;
+                         owl:someValuesFrom :Agent-Individual
+                       ] ;
+           rdfs:range [ rdf:type owl:Restriction ;
+                        owl:onProperty :isMarried ;
+                        owl:someValuesFrom :Agent-Individual
+                      ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#isWife
+:isWife rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :hasSpouse ;
+        rdfs:domain [ rdf:type owl:Restriction ;
+                      owl:onProperty :isWife ;
+                      owl:someValuesFrom :Agent-Individual
+                    ] ;
+        rdfs:range [ rdf:type owl:Restriction ;
+                     owl:onProperty :isWife ;
+                     owl:someValuesFrom :Agent-Individual
+                   ] ;
+        owl:propertyChainAxiom ( :hasFemaleGender
+                                 :isMarried
+                               ) .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#makesSalary
+:makesSalary rdf:type owl:ObjectProperty ;
+             rdfs:domain [ rdf:type owl:Restriction ;
+                           owl:onProperty owl:topObjectProperty ;
+                           owl:someValuesFrom :AgentRoleOccupation
+                         ] ;
+             rdfs:range [ rdf:type owl:Restriction ;
+                          owl:onProperty owl:topObjectProperty ;
+                          owl:someValuesFrom :Salary
+                        ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#providesOccupationAs
+:providesOccupationAs rdf:type owl:ObjectProperty ;
+                      rdfs:domain [ rdf:type owl:Restriction ;
+                                    owl:onProperty owl:topObjectProperty ;
+                                    owl:someValuesFrom :Education
+                                  ] ;
+                      rdfs:range [ rdf:type owl:Restriction ;
+                                   owl:onProperty owl:topObjectProperty ;
+                                   owl:someValuesFrom :AgentRoleOccupation
+                                 ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#workClassTypeAs
+:workClassTypeAs rdf:type owl:ObjectProperty ;
+                 rdfs:domain [ rdf:type owl:Restriction ;
+                               owl:onProperty owl:topObjectProperty ;
+                               owl:someValuesFrom :AgentRoleOccupation
+                             ] ;
+                 rdfs:range [ rdf:type owl:Restriction ;
+                              owl:onProperty owl:topObjectProperty ;
+                              owl:someValuesFrom :WorkClass
+                            ] .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasAgeAs
+:hasAgeAs rdf:type owl:DatatypeProperty ;
+          rdfs:domain [ rdf:type owl:Restriction ;
+                        owl:onProperty owl:topObjectProperty ;
+                        owl:someValuesFrom :Age
+                      ] ;
+          rdfs:range xsd:int .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasFinalWeightValueAs
+:hasFinalWeightValueAs rdf:type owl:DatatypeProperty ;
+                       rdfs:domain [ rdf:type owl:Restriction ;
+                                     owl:onProperty owl:topObjectProperty ;
+                                     owl:someValuesFrom :FinalWeight
+                                   ] ;
+                       rdfs:range xsd:int .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasHoursAs
+:hasHoursAs rdf:type owl:DatatypeProperty ;
+            rdfs:domain [ rdf:type owl:Restriction ;
+                          owl:onProperty owl:topObjectProperty ;
+                          owl:someValuesFrom :HoursPerWeek
+                        ] ;
+            rdfs:range xsd:int .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasStatusAs
+:hasStatusAs rdf:type owl:DatatypeProperty ;
+             rdfs:domain [ rdf:type owl:Restriction ;
+                           owl:onProperty owl:topObjectProperty ;
+                           owl:someValuesFrom :MaritalStatus
+                         ] ;
+             rdfs:range xsd:string .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#hasValueAs
+:hasValueAs rdf:type owl:DatatypeProperty ;
+            rdfs:domain [ rdf:type owl:Restriction ;
+                          owl:onProperty owl:topObjectProperty ;
+                          owl:someValuesFrom :Country
+                        ] ;
+            rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/dc/terms/Agent
+<http://purl.org/dc/terms/Agent> rdf:type owl:Class ;
+                                 owl:equivalentClass <http://xmlns.com/foaf/0.1/Agent> .
+
+
+###  http://schema.org/Person
+<http://schema.org/Person> rdf:type owl:Class ;
+                           owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Age
+:Age rdf:type owl:Class .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Agent-Individual
+:Agent-Individual rdf:type owl:Class .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#AgentRoleOccupation
+:AgentRoleOccupation rdf:type owl:Class .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Bachelors
+:Bachelors rdf:type owl:Class ;
+           rdfs:subClassOf :Education .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#BusniessServices
+:BusniessServices rdf:type owl:Class ;
+                  rdfs:subClassOf :AgentRoleOccupation .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Capital
+:Capital rdf:type owl:Class .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#CapitalGain
+:CapitalGain rdf:type owl:Class ;
+             rdfs:subClassOf :Capital ;
+             owl:disjointWith :CapitalLoss .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#CapitalLoss
+:CapitalLoss rdf:type owl:Class ;
+             rdfs:subClassOf :Capital .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Caucasoid
+:Caucasoid rdf:type owl:Class ;
+           rdfs:subClassOf :Race .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Country
+:Country rdf:type owl:Class .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Couple
+:Couple rdf:type owl:Class ;
+        rdfs:subClassOf :Relationship ;
+        owl:disjointWith :NotInFamily .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Doctorate
+:Doctorate rdf:type owl:Class ;
+           rdfs:subClassOf :Education .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#EasternCountry
+:EasternCountry rdf:type owl:Class ;
+                rdfs:subClassOf :Country .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Education
+:Education rdf:type owl:Class ;
+           owl:disjointWith :Salary .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#EducationNumber
+:EducationNumber rdf:type owl:Class .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Female
+:Female rdf:type owl:Class ;
+        rdfs:subClassOf :Sex ;
+        owl:disjointWith :Male .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#FinalWeight
+:FinalWeight rdf:type owl:Class .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#GovServices
+:GovServices rdf:type owl:Class ;
+             rdfs:subClassOf :WorkClass .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#GreaterThan50K
+:GreaterThan50K rdf:type owl:Class ;
+                rdfs:subClassOf :Salary ;
+                owl:disjointWith :LessThan50K .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#HoursPerWeek
+:HoursPerWeek rdf:type owl:Class .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#InFamily
+:InFamily rdf:type owl:Class ;
+          rdfs:subClassOf :Relationship .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#LessThan50K
+:LessThan50K rdf:type owl:Class ;
+             rdfs:subClassOf :Salary .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Male
+:Male rdf:type owl:Class ;
+      rdfs:subClassOf :Sex .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#MaritalStatus
+:MaritalStatus rdf:type owl:Class ;
+               owl:disjointUnionOf ( :Salary
+                                     :Sex
+                                   ) .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#MarriedCurrently
+:MarriedCurrently rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Class ;
+                                        owl:oneOf ( :married
+                                                  )
+                                      ] ;
+                  rdfs:subClassOf :MaritalStatus ;
+                  owl:disjointWith :NotMarriedCurrently .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Mongoloid
+:Mongoloid rdf:type owl:Class ;
+           rdfs:subClassOf :Race .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Negroid
+:Negroid rdf:type owl:Class ;
+         rdfs:subClassOf :Race .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#NorthernCountry
+:NorthernCountry rdf:type owl:Class ;
+                 rdfs:subClassOf :Country .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#NotInFamily
+:NotInFamily rdf:type owl:Class ;
+             rdfs:subClassOf :Relationship .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#NotMarriedCurrently
+:NotMarriedCurrently rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Class ;
+                                           owl:oneOf ( :divorced
+                                                       :unmarried
+                                                     )
+                                         ] ;
+                     rdfs:subClassOf :MaritalStatus .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#OtherRelative
+:OtherRelative rdf:type owl:Class ;
+               rdfs:subClassOf :Relationship .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#OtherService
+:OtherService rdf:type owl:Class ;
+              rdfs:subClassOf :WorkClass .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#OtherServices
+:OtherServices rdf:type owl:Class ;
+               rdfs:subClassOf :AgentRoleOccupation .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#PostGraduate
+:PostGraduate rdf:type owl:Class ;
+              rdfs:subClassOf :Education .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Preschool
+:Preschool rdf:type owl:Class ;
+           rdfs:subClassOf :Education .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#PrivateService
+:PrivateService rdf:type owl:Class ;
+                rdfs:subClassOf :WorkClass .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#ProtectiveServices
+:ProtectiveServices rdf:type owl:Class ;
+                    rdfs:subClassOf :AgentRoleOccupation .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Race
+:Race rdf:type owl:Class ;
+      owl:disjointUnionOf ( :Capital
+                            :Relationship
+                            :WorkClass
+                            owl:Thing
+                          ) .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Relationship
+:Relationship rdf:type owl:Class .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Salary
+:Salary rdf:type owl:Class .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#Sex
+:Sex rdf:type owl:Class .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#SouthernCountry
+:SouthernCountry rdf:type owl:Class ;
+                 rdfs:subClassOf :Country .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#TechServices
+:TechServices rdf:type owl:Class ;
+              rdfs:subClassOf :AgentRoleOccupation .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#TillSchool
+:TillSchool rdf:type owl:Class ;
+            rdfs:subClassOf :Education .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#WesternCountry
+:WesternCountry rdf:type owl:Class ;
+                rdfs:subClassOf :Country .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#WorkClass
+:WorkClass rdf:type owl:Class .
+
+
+###  http://www.w3.org/2000/10/swap/pim/contact#Person
+<http://www.w3.org/2000/10/swap/pim/contact#Person> rdf:type owl:Class ;
+                                                    owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing
+<http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class ;
+                                  rdfs:comment "An agent (eg. person, group, software or physical artifact)." ;
+                                  rdfs:label "Agent" ;
+                                  <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
+                                         owl:disjointWith <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ,
+                                                   <http://xmlns.com/foaf/0.1/Agent> ;
+                                   owl:disjointWith <http://xmlns.com/foaf/0.1/Project> ;
+                                   rdfs:comment "A person." ;
+                                   rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> ;
+                                   rdfs:label "Person" ;
+                                   <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> "stable" .
+
+
+###  http://xmlns.com/foaf/0.1/Project
+<http://xmlns.com/foaf/0.1/Project> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#america
+:america rdf:type owl:NamedIndividual ,
+                  :WesternCountry .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#armedForce
+:armedForce rdf:type owl:NamedIndividual ,
+                     :ProtectiveServices .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#asian
+:asian rdf:type owl:NamedIndividual ,
+                :Mongoloid .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#aunt
+:aunt rdf:type owl:NamedIndividual ,
+               :OtherRelative .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#bTech
+:bTech rdf:type owl:NamedIndividual ,
+                [ rdf:type owl:Restriction ;
+                  owl:onProperty owl:topObjectProperty ;
+                  owl:someValuesFrom :Education
+                ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#black
+:black rdf:type owl:NamedIndividual ,
+                :Negroid .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#business
+:business rdf:type owl:NamedIndividual ,
+                   :OtherService .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#child
+:child rdf:type owl:NamedIndividual ,
+                :InFamily .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#customerCare
+:customerCare rdf:type owl:NamedIndividual ,
+                       :TechServices .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#divorced
+:divorced rdf:type owl:NamedIndividual ,
+                   :NotMarriedCurrently .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#friend
+:friend rdf:type owl:NamedIndividual ,
+                 :NotInFamily .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#husband
+:husband rdf:type owl:NamedIndividual ,
+                  :Couple .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#india
+:india rdf:type owl:NamedIndividual ,
+                :EasternCountry .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#indianNavy
+:indianNavy rdf:type owl:NamedIndividual ,
+                     :GovServices .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#kindergarten
+:kindergarten rdf:type owl:NamedIndividual ,
+                       :Preschool .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#mTech
+:mTech rdf:type owl:NamedIndividual ,
+                :PostGraduate .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#married
+:married rdf:type owl:NamedIndividual ,
+                  :MarriedCurrently .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#pHd
+:pHd rdf:type owl:NamedIndividual ,
+              :Doctorate .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#privateCompany
+:privateCompany rdf:type owl:NamedIndividual ,
+                         :PrivateService .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#ram
+:ram rdf:type owl:NamedIndividual ,
+              :Agent-Individual ,
+              :Male .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#sales
+:sales rdf:type owl:NamedIndividual ,
+                :BusniessServices .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#selfEmployee
+:selfEmployee rdf:type owl:NamedIndividual ,
+                       :OtherServices .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#southAfrica
+:southAfrica rdf:type owl:NamedIndividual ,
+                      :SouthernCountry .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#tina
+:tina rdf:type owl:NamedIndividual ,
+               :Agent-Individual ,
+               :Female ,
+               [ rdf:type owl:Restriction ;
+                 owl:onProperty :hasEducationTill ;
+                 owl:someValuesFrom :Bachelors
+               ] ,
+               [ rdf:type owl:Restriction ;
+                 owl:onProperty :hasMaritialStatus ;
+                 owl:someValuesFrom :MarriedCurrently
+               ] ,
+               [ rdf:type owl:Restriction ;
+                 owl:onProperty :hasGender ;
+                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                 owl:onClass :Female
+               ] .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#uncle
+:uncle rdf:type owl:NamedIndividual ,
+                :OtherRelative .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#unitedKingdom
+:unitedKingdom rdf:type owl:NamedIndividual ,
+                        :NorthernCountry .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#unmarried
+:unmarried rdf:type owl:NamedIndividual ,
+                    :NotMarriedCurrently .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#white
+:white rdf:type owl:NamedIndividual ,
+                :Caucasoid .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#wife
+:wife rdf:type owl:NamedIndividual ,
+               :Couple .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#10th
+<http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#10th> rdf:type owl:NamedIndividual ,
+                                                                              :TillSchool .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#10000
+<http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#10000> rdf:type owl:NamedIndividual ,
+                                                                               :LessThan50K .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#20percentLoss
+<http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#20percentLoss> rdf:type owl:NamedIndividual ,
+                                                                                       :CapitalLoss .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#20percentProfit
+<http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#20percentProfit> rdf:type owl:NamedIndividual ,
+                                                                                         :CapitalGain .
+
+
+###  http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#60000
+<http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#60000> rdf:type owl:NamedIndividual ,
+                                                                               :GreaterThan50K .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Bachelors
+                :Doctorate
+                :PostGraduate
+                :Preschool
+                :TillSchool
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BusniessServices
+                :OtherServices
+                :ProtectiveServices
+                :TechServices
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Caucasoid
+                :Mongoloid
+                :Negroid
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :EasternCountry
+                :NorthernCountry
+                :SouthernCountry
+                :WesternCountry
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :GovServices
+                :OtherService
+                :PrivateService
+              )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :america
+                        :india
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :asian
+                        :black
+                        :white
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :aunt
+                        :uncle
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :bTech
+                        :kindergarten
+                        :mTech
+                        :pHd
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :business
+                        :customerCare
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :divorced
+                        :married
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :married
+                        :unmarried
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#10000>
+                        <http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#60000>
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( <http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#20percentLoss>
+                        <http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha#20percentProfit>
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,7 @@
+prefix ex: <http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
+SELECT (?s AS ?IndividualNumber) (?o AS ?Datatype)
+WHERE{
+    ?s ex:hasFinalWeightOrUniqueAdharIdAs/ex:hasFinalWeightValueAs ?o
+    
+} LIMIT 100

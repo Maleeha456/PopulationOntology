@@ -1,0 +1,11 @@
+PREFIX  ex: <http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+select (?s AS ?IndividualNumber) (?o1 AS ?Age) (?o2 AS ?Gender) (?o3 AS ?Occupation) (?o4 AS ?Country) (?o5 AS ?MaritialStatus)
+where
+{
+    ?s ex:hasAge ?o1.
+    ?s ex:hasGender ?o2.
+    ?s ex:hasOccupation ?o3.
+    ?s ex:belongsTo ?o4.
+    ?s ex:hasMaritialStatus ?o5
+}

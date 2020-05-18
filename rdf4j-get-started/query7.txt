@@ -1,0 +1,8 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix ex: <http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
+SELECT ?person
+WHERE{
+    ?person ex:hasAge ?age.
+    ?age a ?age
+}

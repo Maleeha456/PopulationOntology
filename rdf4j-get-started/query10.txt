@@ -1,0 +1,9 @@
+prefix ex: <http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
+ASK
+WHERE{
+    ?s1 ex:hasGender ?o1.
+    ?s1 ex:hasAge ?o2.
+    ?s1 ex:hasWorkClass ?o3}
+Group By ?o2
+Having ((?o2)>"67")

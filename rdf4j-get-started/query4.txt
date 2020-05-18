@@ -1,0 +1,12 @@
+PREFIX ex: <http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT (?s1 AS ?IndividualNumber) (?o2 AS ?Salary) (?o1 AS ?Age) (?o3 AS ?Gender)  (?s2 AS ?Occupation) (?o5 AS ?WorkClass) (?o6 AS ?HoursPerWeek) 
+WHERE {
+    ?s1 ex:hasAge ?o1.
+    ?s1 ex:hasSalary ?o2.
+    ?s1 ex:hasGender ?o3.
+    ?s2 ex:makesSalary ?o2.
+    ?s2 ex:hasToWorkForHoursAs ?o6.
+    ?s2 ex:workClassTypeAs ?o5
+    
+} LIMIT 100

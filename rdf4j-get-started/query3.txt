@@ -1,0 +1,8 @@
+PREFIX ex: <http://www.iiitd.ac.in/humanpopulation/census/garvita/maleeha> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+SELECT (?o AS ?Occupation) (?s1 AS ?IndividualNumber) (?s2 AS ?Education) (?s3 AS ?CapitalGain)
+WHERE {
+    ?s1 ex:hasOccupation ?o.
+    ?s2 ex:providesOccupationAs ?o.
+    ?s3 ex:forOccupationIs ?o
+} LIMIT 100
